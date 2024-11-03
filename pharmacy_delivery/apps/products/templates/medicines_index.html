@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel='stylesheet' href="{% static 'css/lists.css' %}">
+<link rel='stylesheet' href="{% static 'css/age-checker.css' %}">
+<link rel='stylesheet' href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Medicines</h1>
+{% if medicines_list %}
+<ul>
+    {% for medicine in medicines_list %}
+    <li><a>{{ medicine.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No medicines are available.</p>
+{% endif %}
+
+{% endblock %}

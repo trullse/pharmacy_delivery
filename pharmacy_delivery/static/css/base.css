@@ -1,0 +1,337 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Links styles */
+
+a {
+    text-decoration: none;
+    color: green;
+	font-family: 'Lato', 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+    color: lightgreen;
+}
+
+a:visited {
+    color: rgb(15, 88, 15);
+}
+
+/* Content wrap */
+
+#content-wrap {
+	margin-left: 20vw;
+	margin-right: 20vw;
+	display: flex;
+	flex-direction: column;
+	max-width: 100vw;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+	background-color: white;
+}
+
+/* Fonts */
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../static/fonts/lato/Lato-Regular.eot');
+	src: local('Lato Regular'), local('Lato-Regular'),
+		url('../fonts/lato/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/lato/Lato-Regular.woff2') format('woff2'),
+		url('../fonts/lato/Lato-Regular.woff') format('woff'),
+		url('../fonts/lato/Lato-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../fonts/lato/Lato-Medium.eot');
+	src: local('Lato Medium'), local('Lato-Medium'),
+		url('../fonts/lato/Lato-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/lato/Lato-Medium.woff2') format('woff2'),
+		url('../fonts/lato/Lato-Medium.woff') format('woff'),
+		url('../fonts/lato/Lato-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../fonts/lato/Lato-Italic.eot');
+	src: local('Lato Italic'), local('Lato-Italic'),
+		url('../fonts/lato/Lato-Italic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/lato/Lato-Italic.woff2') format('woff2'),
+		url('../fonts/lato/Lato-Italic.woff') format('woff'),
+		url('../fonts/lato/Lato-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../fonts/lato/Lato-Bold.eot');
+	src: local('Lato Bold'), local('Lato-Bold'),
+		url('../fonts/lato/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/lato/Lato-Bold.woff2') format('woff2'),
+		url('../fonts/lato/Lato-Bold.woff') format('woff'),
+		url('../fonts/lato/Lato-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/roboto/Roboto-Regular.eot');
+	src: local('Roboto'), local('Roboto-Regular'),
+		url('Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+		url('../fonts/roboto/Roboto-Regular.woff') format('woff'),
+		url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/roboto/Roboto-Italic.eot');
+	src: local('Roboto Italic'), local('Roboto-Italic'),
+		url('../fonts/roboto/Roboto-Italic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/roboto/Roboto-Italic.woff2') format('woff2'),
+		url('../fonts/roboto/Roboto-Italic.woff') format('woff'),
+		url('../fonts/roboto/Roboto-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/roboto/Roboto-Medium.eot');
+	src: local('Roboto Medium'), local('Roboto-Medium'),
+		url('../fonts/roboto/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+		url('../fonts/roboto/Roboto-Medium.woff') format('woff'),
+		url('../fonts/roboto/Roboto-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/roboto/Roboto-Bold.eot');
+	src: local('Roboto Bold'), local('Roboto-Bold'),
+	url('Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+		url('../fonts/roboto/Roboto-Bold.woff') format('woff'),
+		url('../fonts/roboto/Roboto-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* Text */
+
+.italic-text {
+	font-family: 'Lato', 'Roboto', sans-serif;
+	font-style: italic;
+	font-weight: 400;
+}
+
+.bold-text {
+	font-family: 'Lato', 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.regular-text {
+	font-size: 20px;
+}
+
+.medium-text {
+	font-size: 30px;
+}
+
+.big-text {
+	font-size: 40px;
+}
+
+.center-area {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+
+.center-placed {
+	justify-content: center;
+}
+
+.color-company {
+	color: green;
+}
+
+.margin-bottom-20 {
+	margin-bottom: 20px;
+}
+
+p, label {
+    font-family: 'Lato', 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: 'Lato', 'Roboto', sans-serif;
+    font-weight: 500;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Lato', 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+h3 {
+    font-family: 'Lato', 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+	#navigation-top {
+		font-family: 'Lato', 'Roboto', sans-serif;
+		font-size: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	header {
+		position: static;
+		top: 0;
+		background-color: white;
+		z-index: 1000;
+		padding: 10px;
+		box-shadow: 0px 0px 10px #ccc;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 4000px) {
+	#navigation-top {
+		font-family: 'Lato', 'Roboto', sans-serif;
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+	}
+
+	header {
+		position: sticky;
+		top: 0;
+		background-color: white;
+		z-index: 1000;
+		padding: 10px;
+		box-shadow: 0px 0px 10px #ccc;
+	}
+}
+
+footer {
+	background-color: green;
+	padding: 50px 20px;
+	display: flex;
+	justify-content: center;
+	margin-top: auto;
+}
+
+footer > p {
+	color: white;
+	margin: 0px;
+}
+
+body {
+    margin: 0;
+}
+
+table {
+	font-family: 'Lato', 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+img.circled {
+	border-radius: 20px;
+}
+
+figure {
+	margin: 0px;
+}
+
+a.button {
+	color: white;
+	font-family: 'Lato', 'Roboto', sans-serif;
+    font-size: 20px;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: green;
+	margin-bottom: 20px;
+	display: inline-block;
+	margin: 20px 0px;
+	width: fit-content;
+}
+
+a.button:hover {
+	text-decoration: none;
+	background-color: rgb(39, 180, 39);
+}
+
+q.quote {
+    position: relative;
+    font-style: normal; /* Убираем стандартный курсив */
+}
+
+q.quote[lang=en]::before {
+	content: "\00AB"; /* Левая двойная кавычка в кодировке Unicode */
+    position: absolute;
+    left: -20px; /* Расстояние между кавычкой и текстом */
+    top: 0px;
+    font-size: 1.2em; /* Размер кавычек */
+}
+
+q.quote[lang=en]:after {
+    content: "\00BB"; /* Правая двойная кавычка в кодировке Unicode */
+    position: absolute;
+    right: -20px; /* Расстояние между кавычкой и текстом */
+    bottom: 0px;
+    font-size: 1.2em; /* Размер кавычек */
+}
+
+q.quote[lang=ru]::before {
+	content: "\201C"; /* Левая двойная кавычка в кодировке Unicode */
+    position: absolute;
+    left: -20px; /* Расстояние между кавычкой и текстом */
+    top: 5px;
+    font-size: 1.2em; /* Размер кавычек */
+}
+
+q.quote[lang=ru]:after {
+    content: "\201D"; /* Правая двойная кавычка в кодировке Unicode */
+    position: absolute;
+    right: -20px; /* Расстояние между кавычкой и текстом */
+    bottom: -5px;
+    font-size: 1.2em; /* Размер кавычек */
+}

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Custom apps
     'pharmacy_delivery.apps.orders',
     'pharmacy_delivery.apps.products',
+    'pharmacy_delivery.apps.repositories'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'pharmacy_delivery.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'pharmacy_delivery' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>{% block title %}Pharmacy{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Pharmacy, Drugs, Medicines"/>
+    <meta name="description" content="HealthHub Pharmacy web-site. Medicines, drugs, qualificated help, coupons and more."/>
+    <meta name="author" content="Aliaksei Leanenka"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    <link rel='stylesheet' href="{% static 'css/base.css' %}">
+    {% block styles %}{% endblock %}
+
+</head>
+
+    <body>
+        <header>
+            <nav id="navigation-top">
+                <a>
+                    <img src="{% static 'images/HealthHub.png' %}" alt="HealthHub logo" height="50">
+                </a>&nbsp;&nbsp;&nbsp;
+                <a>News</a>&nbsp;|&nbsp;
+                <a>Categories</a>&nbsp;|&nbsp;
+                <a href="{% url 'products:medicine_index' %}">Medicines</a>&nbsp;|&nbsp;
+                <a>Coupons</a>&nbsp;|&nbsp;
+                <a>About</a>&nbsp;|&nbsp;
+                <a>Contacts</a>&nbsp;|&nbsp;
+                <a>Vacancies</a>&nbsp;|&nbsp;
+                <a>FAQ</a>&nbsp;|&nbsp;
+                <a>Feedbacks</a>&nbsp;|&nbsp;
+                <a>Additional</a>&nbsp;|&nbsp;
+            </nav>
+        </header>
+        <main>
+            <div id="content-wrap">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        <footer>
+           <p>&copy; 2023 HealthHub Pharmacy. All rights reserved</p>
+        </footer>
+    </body>
+</html>

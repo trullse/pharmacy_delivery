@@ -1,0 +1,41 @@
+.medicine-table {
+    border: 2px solid green;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.medicine-table td {
+    padding: 5px;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.medicine-table tr {
+    height: 50px;
+}
+
+.medicine-table td:empty {
+    background-color: rgb(235, 187, 187);
+}
+
+.medicine-table thead {
+    color: white;
+    background-color: green;
+}
+
+.medicine-table tbody tr:nth-child(odd) {
+    background-color: #94d887;
+}
+
+.medicine-table tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+.medicine-table tbody tr:last-child td:last-child:hover {
+    background-color: red;
+}
+
+.medicine-table tbody tr:first-child td:first-child:hover {
+    background-color: red;
+}
