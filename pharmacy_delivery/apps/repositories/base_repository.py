@@ -1,17 +1,37 @@
-from django.db import connection, transaction
+import psycopg2
+from psycopg2.extras import RealDictCursor
+
+DB_SETTINGS = {
+    'dbname': 'pharmacydb',
+    'user': 'postgres',
+    'password': 'postgres',
+    'host': '127.0.0.1',
+    'port': '5432',
+}
+
+def connect_to_db():
+    try:
+        db_connection = psycopg2.connect(**DB_SETTINGS)
+        print("Database connection successful.")
+        return db_connection
+    except psycopg2.Error as e:
+        print("Error connecting to the database:", e)
+        raise
+
 
 class BaseRepository:
-    def __init__(self, table_name):
+    def __init__(self, connection, table_name):
+        self.connection = connection
         self.table_name = table_name
 
     def fetch_one(self, query, params=None):
-        with connection.cursor() as cursor:
+        with self.connection.cursor(cursor_factory=RealDictCursor) as cursor:
             cursor.execute(query, params or [])
             result = cursor.fetchone()
         return result
 
     def fetch_all(self, query, params=None):
-        with connection.cursor() as cursor:
+        with self.connection.cursor(cursor_factory=RealDictCursor) as cursor:
             cursor.execute(query, params or [])
             columns = [col[0] for col in cursor.description]
             results = [
@@ -21,9 +41,9 @@ class BaseRepository:
         return results
 
     def execute(self, query, params=None):
-        with connection.cursor() as cursor:
+        with self.connection.cursor(cursor_factory=RealDictCursor) as cursor:
             cursor.execute(query, params or [])
-        transaction.commit()
+        self.connection.commit()
 
     def insert(self, **kwargs):
         columns = ', '.join(kwargs.keys())
