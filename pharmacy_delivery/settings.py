@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # Custom apps
     'pharmacy_delivery.apps.orders',
     'pharmacy_delivery.apps.products',
-    'pharmacy_delivery.apps.repositories'
+    'pharmacy_delivery.apps.orm',
 ]
 
 MIDDLEWARE = [

@@ -1,7 +1,10 @@
-from django.views import generic
+import json
+import os
 
-from pharmacy_delivery.apps.repositories.base_repository import connect_to_db
-from pharmacy_delivery.apps.repositories.medicine_repository import MedicineRepository
+from django.conf import settings
+from django.views import generic
+from pharmacy_delivery.apps.orm.BaseManager import BaseManager
+from pharmacy_delivery.apps.products.models import Medicine
 
 
 class MedicinesIndexView(generic.ListView):
@@ -9,9 +12,14 @@ class MedicinesIndexView(generic.ListView):
     context_object_name = "medicines_list"
 
     def get_queryset(self):
-        connection = connect_to_db()
-        medicine_repo = MedicineRepository(connection)
-        return medicine_repo.get_all()
+        db_config_path = os.path.join(settings.BASE_DIR, 'db_config.json')
+        with open(db_config_path) as file:
+            data = json.load(file)
+        BaseManager.set_connection(database_settings=data)
+        medicine = Medicine.objects.select('name', 'price')
+        print(medicine)
+        return medicine
+
 
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
