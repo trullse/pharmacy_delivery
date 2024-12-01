@@ -33,12 +33,7 @@ class BaseRepository:
     def fetch_all(self, query, params=None):
         with self.connection.cursor(cursor_factory=RealDictCursor) as cursor:
             cursor.execute(query, params or [])
-            columns = [col[0] for col in cursor.description]
-            results = [
-                dict(zip(columns, row))
-                for row in cursor.fetchall()
-            ]
-        return results
+            return cursor.fetchall()
 
     def execute(self, query, params=None):
         with self.connection.cursor(cursor_factory=RealDictCursor) as cursor:
