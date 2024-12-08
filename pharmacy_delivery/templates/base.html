@@ -29,7 +29,13 @@
                 <a>Contacts</a>&nbsp;|&nbsp;
                 <a>Vacancies</a>&nbsp;|&nbsp;
                 <a>FAQ</a>&nbsp;|&nbsp;
-                <a>Feedbacks</a>
+                <a>Feedbacks</a>&nbsp;|&nbsp;
+                {% if user_id %}
+                Welcome, {{ username }} &nbsp;&nbsp;&nbsp;
+                <a href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
+                {% else %}
+                Unauthorized, <a href="{% url 'login' %}?next={{ request.path }}">Login</a>
+                {% endif %}
             </nav>
         </header>
         <main>

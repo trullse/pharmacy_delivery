@@ -21,6 +21,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.IndexView.as_view(), name="index"),
+    path('auth/', include('authapp.urls')),
     path('orders/', include('pharmacy_delivery.apps.orders.urls')),
     path('products/', include('pharmacy_delivery.apps.products.urls')),
 ]

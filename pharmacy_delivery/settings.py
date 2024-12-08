@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'pharmacy_delivery.apps.orders',
     'pharmacy_delivery.apps.products',
     'pharmacy_delivery.apps.orm',
+    'authapp',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'authapp.context_processors.user_context',
             ],
         },
     },
@@ -136,3 +138,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
